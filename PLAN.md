@@ -43,5 +43,5 @@
 
  [Чек-лист](https://docs.google.com/spreadsheets/d/1whxyzizG90666BAUjL6eL32vfHZtG0e06Zu91SHmM0M/edit?usp=sharing)
 
- [Тест-кейсы]()
+ [Тест-кейсы](https://docs.google.com/spreadsheets/d/1FW8404e0lRLdWW-vVB6siEfMSK2b4WXFJstIy-IrsJA/edit?usp=sharing)
 
