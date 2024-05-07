@@ -1,0 +1,189 @@
+package ru.iteco.fmhandroid.ui.page;
+
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+
+
+
+
+
+
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
+import androidx.test.espresso.Espresso;
+import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.matcher.RootMatchers;
+
+import org.hamcrest.Matchers;
+
+import io.qameta.allure.android.rules.ScreenshotRule;
+import ru.iteco.fmhandroid.R;
+
+import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.Matchers.allOf;
+
+import android.accessibilityservice.AccessibilityService;
+
+import com.google.android.material.textview.MaterialTextView;
+
+import ru.iteco.fmhandroid.ui.MainFragment;
+import ru.iteco.fmhandroid.ui.NewsListFragment;
+import ru.iteco.fmhandroid.ui.date.DataHelper;
+import ru.iteco.fmhandroid.ui.elements.AboutApp;
+import ru.iteco.fmhandroid.ui.elements.News;
+
+public class NewsPage {
+    //создание новости
+    public static void creationOfNews() {
+        News.buttonEditNews.perform(click());
+        News.buttonAddNews.check(matches(isDisplayed()));
+        News.buttonAddNews.perform(click());
+        News.titleNewsCreatWindow.check(matches(isDisplayed()));
+    }
+
+    //заполняем поля при создании Новости
+    public static void fillNewsFields(String emptyCategory, String choiceOfCategory, String chosenCategory, String category, String title, String emptyDate, String emptyTime, String withDialPadOrTextInput, String saveOrCancelTime, String emptyDescription, String description) {
+        Integer categoryPosition = null;
+        if (chosenCategory == "Объявление") {
+            categoryPosition = 0;
+        } else if (chosenCategory == "День рождения") {
+            categoryPosition = 1;
+        } else if (chosenCategory == "Зарплата") {
+            categoryPosition = 2;
+        } else if (chosenCategory == "Профсоюз") {
+            categoryPosition = 3;
+        } else if (chosenCategory == "Праздник") {
+            categoryPosition = 4;
+        } else if (chosenCategory == "Массаж") {
+            categoryPosition = 5;
+        } else if (chosenCategory == "Благодарность") {
+            categoryPosition = 6;
+        } else if (chosenCategory == "Нужна помощь") {
+            categoryPosition = 7;
+        }
+
+        // заполнение поля "Категория"
+        if (emptyCategory == "no") {
+            if (choiceOfCategory == "yes") {
+                News.buttonShowingDropdownMenu.perform(click());
+                Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(categoryPosition).perform(ViewActions.click());
+            } else {
+                News.categoryNews.perform(replaceText(category));
+                News.categoryNews.check(matches(isDisplayed()));
+            }
+        }
+
+        //заполняем поле заголовок
+        News.titleTextInputNews.perform(replaceText(title));
+
+        //заполняем поле Дата
+        if (emptyDate == "no") {
+            News.dateTextInputNews.perform(click());
+            News.okButton.perform(click());
+        }
+        //заполняем поле Время
+        if (emptyTime == "no") {
+            if (withDialPadOrTextInput == "dial") {
+                News.timeTextInputNews.perform(click());
+                if (saveOrCancelTime == "save") {
+                    News.okButton.perform(click());
+                } else {
+                    News.cancelButton.perform(click());
+                }
+            }
+        }
+
+        //заполняем поле Описание
+        if (emptyDescription == "no") {
+            News.descriptionTextInputNews.perform(replaceText(description));
+            News.descriptionTextInputNews.check(matches(withText(description)));
+        }
+    }
+
+    //Сохраняем новость — нажимаем на кнопку SAVE
+    public static void saveNews() {
+        News.buttonSaveNews.perform(click());
+    }
+
+    //фильтруем Новости (после нажатия на кнопку редактировать)
+    public static void filterNews(String category) {
+        News.buttonEditNews.perform(click());
+        News.buttonFilterNews.perform(click());
+        News.categoryNews.perform(replaceText(category));
+        News.dateStartFilter.perform(click());
+        News.okButton.perform(click());
+        News.dateEndFilter.perform(click());
+        News.okButton.perform(click());
+        News.buttonNotActive.perform(click());
+        News.buttonFilter.perform(click());
+    }
+
+    //удаление новости
+    public static void deleteNews(String title) {
+        onView(allOf(withId(R.id.delete_news_item_image_view), hasSibling(withText(title)))).perform(click());
+        News.okButton.check(matches(isDisplayed()));
+        // подтверждаем удаление новости
+        News.okButton.perform(click());
+    }
+
+    public static void checkIconVisible() throws InterruptedException {
+        Thread.sleep(1000);
+        //News.iconError.check(matches(isDisplayed()));
+        News.iconError.check(matches(isDisplayed()));
+        //onView(withText("Заполните пустые поля")).check(matches(isDisplayed()));
+        //(withText(R.string.empty_fields));
+        //News.iconError.matches(isDisplayed());
+        //onView(withText("R.id.@id/message")).check(matches(isDisplayed()));
+        //onView(withId(R.id.message)).check(matches(isDisplayed()));
+        //  , isDisplayed().perform(actionOnItemAtPosition(n, swipeUp()));
+//        onView(withId(R.id.message)).check(matches(isDisplayed()));
+//        onView(withId(R.id.message))
+//                .check(matches(withText(R.string.empty_fields)));
+
+    }
+//    public static int cIcon() throws InterruptedException {
+//        Thread.sleep(1000);
+//       //return R.id.message;
+//       return R.string.empty_fields;
+//    }
+
+
+    //проверка созданной новости
+    public static void checkCreatedNews(String title) {
+        DataHelper.isDisplayedSwipe(onView(withText(title)), 3, true);
+    }
+
+    //проверка удаления новости
+    public static void checkDeleteNews(String title) {
+        onView(withText(title)).check(doesNotExist());
+    }
+
+    //изменение заголовка новости
+    public static void updateTitleNews(String title, String newTitle) {
+        //кликаем по новости
+        onView(allOf(News.editNews, hasSibling(withText(title)))).perform(click());
+        //изменяем title
+        News.titleTextInputNews.perform(replaceText(newTitle));
+        //нажимаем на кнопку сохранить
+        News.buttonSaveNews.perform(click());
+    }
+}
