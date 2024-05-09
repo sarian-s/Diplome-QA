@@ -14,7 +14,6 @@ import androidx.test.rule.ActivityTestRule;
 
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.elements.AboutApp;
-//import ru.iteco.fmhandroid.ui.elements.Claim;
 import ru.iteco.fmhandroid.ui.elements.Menu;
 import ru.iteco.fmhandroid.ui.elements.News;
 import ru.iteco.fmhandroid.ui.elements.Quotes;

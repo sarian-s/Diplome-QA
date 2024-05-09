@@ -5,7 +5,6 @@ import androidx.test.espresso.ViewInteraction;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-
 public class Quotes {
     //Цитаты
     public static ViewInteraction missionTitleText = onView(withText("«Хоспис для меня - это то, каким должен быть мир.\""));

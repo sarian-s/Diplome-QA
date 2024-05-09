@@ -10,7 +10,6 @@ public class QuotePage {
 
     public static void viewQuote() {
         // просмотр цитаты и её описания
-        //missionTitleText
         Quotes.missionTitleText.check(matches(isDisplayed()));
         Quotes.missionTitleText.perform(click());
     }

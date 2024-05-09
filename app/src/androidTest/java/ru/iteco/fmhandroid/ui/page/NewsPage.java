@@ -5,50 +5,20 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
-
-
-
-
-
-
-import static androidx.test.espresso.Espresso.closeSoftKeyboard;
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
+import static org.hamcrest.Matchers.allOf;
 
 import androidx.test.espresso.Espresso;
-import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.matcher.RootMatchers;
 
 import org.hamcrest.Matchers;
 
-import io.qameta.allure.android.rules.ScreenshotRule;
 import ru.iteco.fmhandroid.R;
-
-import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.allOf;
-
-import android.accessibilityservice.AccessibilityService;
-
-import com.google.android.material.textview.MaterialTextView;
-
-import ru.iteco.fmhandroid.ui.MainFragment;
-import ru.iteco.fmhandroid.ui.NewsListFragment;
 import ru.iteco.fmhandroid.ui.date.DataHelper;
-import ru.iteco.fmhandroid.ui.elements.AboutApp;
 import ru.iteco.fmhandroid.ui.elements.News;
 
 public class NewsPage {
@@ -147,24 +117,8 @@ public class NewsPage {
 
     public static void checkIconVisible() throws InterruptedException {
         Thread.sleep(1000);
-        //News.iconError.check(matches(isDisplayed()));
         News.iconError.check(matches(isDisplayed()));
-        //onView(withText("Заполните пустые поля")).check(matches(isDisplayed()));
-        //(withText(R.string.empty_fields));
-        //News.iconError.matches(isDisplayed());
-        //onView(withText("R.id.@id/message")).check(matches(isDisplayed()));
-        //onView(withId(R.id.message)).check(matches(isDisplayed()));
-        //  , isDisplayed().perform(actionOnItemAtPosition(n, swipeUp()));
-//        onView(withId(R.id.message)).check(matches(isDisplayed()));
-//        onView(withId(R.id.message))
-//                .check(matches(withText(R.string.empty_fields)));
-
     }
-//    public static int cIcon() throws InterruptedException {
-//        Thread.sleep(1000);
-//       //return R.id.message;
-//       return R.string.empty_fields;
-//    }
 
 
     //проверка созданной новости

@@ -1,6 +1,5 @@
 package ru.iteco.fmhandroid.ui.page;
 
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
@@ -19,7 +18,9 @@ public class AuthorizationPage {
 
     //Выполняем вход в аккаунт
     public static void logIn(String login, String password) throws InterruptedException {
+        Authorization.loginInput.perform(click());
         Authorization.loginInput.perform(replaceText(login));
+
         Authorization.loginInput.check(matches(withText(login)));
         Authorization.passwordInput.perform(replaceText(password));
         Authorization.passwordInput.check(matches(withText(password)));
