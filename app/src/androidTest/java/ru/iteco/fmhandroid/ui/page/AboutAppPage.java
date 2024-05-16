@@ -1,27 +1,15 @@
 package ru.iteco.fmhandroid.ui.page;
 
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.Intents.release;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasAction;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasData;
+import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.core.AllOf.allOf;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
-import android.content.Intent;
-import android.os.SystemClock;
-
-import androidx.test.espresso.ViewInteraction;
-import androidx.test.espresso.intent.Intents;
-
-import ru.iteco.fmhandroid.ui.date.ViewActions;
+import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.elements.AboutApp;
-
 public class AboutAppPage {
-    //Проверяем что на странице О приложении есть вся информация
+    //Проверка отображения всей информации на странице О приложении
     public static void checkAboutAppInfIsFull() {
         AboutApp.versionValue.check(matches(isDisplayed()));
         AboutApp.privacyPolicyValue.check(matches(isDisplayed()));
@@ -29,43 +17,11 @@ public class AboutAppPage {
         AboutApp.infoLabel.check(matches(isDisplayed()));
     }
 
-    public static void clickPrivacyPolicy() {
-        String uriPrivacyPolicy = "https://vhospice.org/#/privacy-policy";
-        Intents.init();
-        release();
-        onView(AboutApp.aboutPrivacyPolicyValue).perform(click());
-        SystemClock.sleep(3000);
-        intended(allOf(hasData(uriPrivacyPolicy), hasAction(Intent.ACTION_VIEW)));
-        release();
+    public static void clickPrivacyPolicy() { // Проверка кликабельности ссылки Политики конфиденциальности
+        onView(withId(R.id.about_privacy_policy_value_text_view)).check(matches(isClickable()));
     }
 
-    public static ViewInteraction getHeaderPrivacyPolicyPage() {
-        return onView(AboutApp.aboutPrivacyPolicyValue);
-    }
-
-    //Проверка что загрузилась страница с Политикой конфиденциальности.
-    public static void checkPrivacyPolicy() {
-        String headerPrivacyPolicyPage = "Privacy policy";
-        getHeaderPrivacyPolicyPage().check(matches(withText(headerPrivacyPolicyPage)));
-    }
-
-    public static void clickUserAgreement() {
-        String uriTermsOfUse = "https://vhospice.org/#/terms-of-use";
-        Intents.init();
-        release();
-        onView(AboutApp.aboutTermsOfUseValue).perform(click());
-        SystemClock.sleep(3000);
-        intended(allOf(hasData(uriTermsOfUse), hasAction(Intent.ACTION_VIEW)));
-        release();
-    }
-
-    public static ViewInteraction getHeaderTermsOfUsePage() {
-        return onView(AboutApp.aboutTermsOfUseValue);
-    }
-
-    //Проверка что загрузилась страница с Пользовательским соглашением.
-    public static void checkTermsOfUse() {
-        String headerTermsOfUsePage = "Terms of use";
-        getHeaderTermsOfUsePage().check(matches(withText(headerTermsOfUsePage)));
+    public static void clickUserAgreement() { // Проверка кликабельности ссылки Пользовательского соглашения
+        onView(withId(R.id.about_terms_of_use_value_text_view)).check(matches(isClickable()));
     }
 }

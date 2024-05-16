@@ -1,8 +1,8 @@
 package ru.iteco.fmhandroid.ui.page;
 
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.action.ViewActions.click;
 
 import ru.iteco.fmhandroid.ui.elements.Quotes;
 

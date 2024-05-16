@@ -1,12 +1,12 @@
 package ru.iteco.fmhandroid.ui.elements;
 
-import androidx.test.espresso.ViewInteraction;
-
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import android.view.View;
+
+import androidx.test.espresso.ViewInteraction;
 
 import org.hamcrest.Matcher;
 
@@ -50,6 +50,9 @@ public class News {
     //кнопка Сохранить
     public static ViewInteraction buttonSaveNews = onView(withId(R.id.save_button));
     public static ViewInteraction iconError = onView(withId(R.id.message));
+    //onView(withText("Заполните пустые поля"));
+    //public static ViewInteraction iconError = onView(withText(R.string.empty_fields)).check(matches(isDisplayed()));
+
     public static Matcher<View> editNews = withId(R.id.edit_news_item_image_view);
 
 }

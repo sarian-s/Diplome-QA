@@ -17,10 +17,8 @@ public class AuthorizationPage {
     }
 
     //Выполняем вход в аккаунт
-    public static void logIn(String login, String password) throws InterruptedException {
-        Authorization.loginInput.perform(click());
+    public static void logIn(String login, String password) {
         Authorization.loginInput.perform(replaceText(login));
-
         Authorization.loginInput.check(matches(withText(login)));
         Authorization.passwordInput.perform(replaceText(password));
         Authorization.passwordInput.check(matches(withText(password)));
