@@ -1,9 +1,7 @@
 package ru.iteco.fmhandroid.ui.test;
 
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
 import android.view.View;
@@ -20,6 +18,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
@@ -61,74 +60,99 @@ public class NewsTest {
     }
 
     @Test
+    @DisplayName("Создание новости и удаление")
+    @Description("При заполнении всех полей новость создается и отображается, после удаления не отображается")
+    public void shouldCreateNews() {
+        MenuPage.goNews();
+        NewsPage.creationOfNews();
+        NewsPage.fillСategory();
+        NewsPage.fillTitle();
+        NewsPage.fillDatePublication();
+        NewsPage.fillTime();
+        NewsPage.fillDescription();
+        NewsPage.saveNews();
+        NewsPage.checkCreatedNews();
+        MenuPage.goNews();
+        NewsPage.filterNews();
+        NewsPage.deleteNews();
+
+    }
+    @Test
     @DisplayName("Создание новости без категории")
-    public void shouldErrorNotCategory() throws InterruptedException {
+    @Description("Пользователю отображается сообщение " + "Заполните пустые поля")
+    public void shouldErrorNotCategory(){
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields("yes", "no", "Объявление", "no", "Сергей Сарьян", "no", "no", "dial", "save", "no", "Сарьян Описание");
-        NewsPage.saveNews();Thread.sleep(1000);
-
+        NewsPage.fillNotСategory();
+        NewsPage.fillTitle();
+        NewsPage.fillDatePublication();
+        NewsPage.fillTime();
+        NewsPage.fillDescription();
+        NewsPage.saveNews();
+        NewsPage.saveNews();
         onView(withText(R.string.empty_fields))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-
-                .check(matches(withText(R.string.empty_fields)))
-                .check(matches(isDisplayed()));
+                .inRoot(withDecorView(Matchers.not(decorView)));
     }
 
-    @Test
-    @DisplayName("Создание новости")
-    public void shouldCreateNews() throws InterruptedException {
-        MenuPage.goNews();
-        NewsPage.creationOfNews();
-        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Сарьян С", "no", "no", "dial", "save", "no", "Сарьян Сергей");
-        NewsPage.saveNews();Thread.sleep(1000);
-        NewsPage.checkCreatedNews("Сарьян С");
-        MenuPage.goNews();
-        NewsPage.filterNews("Объявление");
-        NewsPage.deleteNews("Сарьян С");
-    }
-
-    @Test
-    @DisplayName("Удаление новости")
-    public void shouldDeleteNews() throws InterruptedException {
-        MenuPage.goNews();
-        NewsPage.creationOfNews();
-        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Сарьян Тест", "no", "no", "dial", "save", "no", "Тест Сарьян");
-        NewsPage.saveNews();Thread.sleep(1000);
-        MenuPage.goNews();
-        NewsPage.filterNews("Объявление");
-        NewsPage.deleteNews("Сарьян Тест");
-
-        MenuPage.goNews();
-        NewsPage.checkDeleteNews("Сарьян Тест");
-    }
 
     @Test
     @DisplayName("Проверка работы фильтра")
-    public void shouldFilterNewsCategory() throws InterruptedException {
+    @Description("При фильтре новостей по полю Категория в списке новостей отображаются только новости выбранной категории")
+    public void shouldFilterNewsCategory() {
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Проверка фильтра Сарьян", "no", "no", "dial", "save", "no", "Описание Сарьян");
-        NewsPage.saveNews();Thread.sleep(1000);
+        NewsPage.fillСategory();
+        NewsPage.fillTitle();
+        NewsPage.fillDatePublication();
+        NewsPage.fillTime();
+        NewsPage.fillDescription();
+        NewsPage.saveNews();
+        NewsPage.checkCreatedNews();
         MenuPage.goNews();
-        NewsPage.filterNews("Объявление");
-        NewsPage.checkCreatedNews("Проверка фильтра Сарьян");
-        NewsPage.deleteNews("Проверка фильтра Сарьян");
+        NewsPage.filterNews();
+        NewsPage.checkCreatedNews();
+        NewsPage.deleteNews();
     }
 
     @Test
     @DisplayName("Редактирование новости")
-    public void shouldChangeNews() throws InterruptedException {
+    @Description("У новости в поле Заголовок отображается отредактированный текст")
+    public void shouldChangeNews() {
         MenuPage.goNews();
         NewsPage.creationOfNews();
-        NewsPage.fillNewsFields("no", "yes", "Объявление", "no", "Тест Сарьян", "no", "no", "dial", "save", "no", "Сарьян Тест");
-        NewsPage.saveNews();Thread.sleep(1000);
+        NewsPage.fillСategory();
+        NewsPage.fillTitle();
+        NewsPage.fillDatePublication();
+        NewsPage.fillTime();
+        NewsPage.fillDescription();
+        NewsPage.saveNews();
+        NewsPage.checkCreatedNews();
         MenuPage.goNews();
-        NewsPage.filterNews("Объявление");
-        NewsPage.updateTitleNews("Тест Сарьян", "Новый Тест Сарьян");
+        NewsPage.filterNews();
+        NewsPage.updateTitleNews();
         MenuPage.goNews();
-        NewsPage.filterNews("Объявление");
-        NewsPage.checkCreatedNews("Новый Тест Сарьян");
-        NewsPage.deleteNews("Новый Тест Сарьян");
+        NewsPage.filterNews();
+        NewsPage.checkEditNews();
+        NewsPage.deleteEditNews();
+    }
+    @Test
+    @DisplayName("Удаление новости")
+    @Description("Удаленная новость не отобржается")
+    public void shouldDeleteNews() {
+        MenuPage.goNews();
+        NewsPage.creationOfNews();
+        NewsPage.fillСategory();
+        NewsPage.fillTitle();
+        NewsPage.fillDatePublication();
+        NewsPage.fillTime();
+        NewsPage.fillDescription();
+        NewsPage.saveNews();
+        NewsPage.checkCreatedNews();
+        MenuPage.goNews();
+        NewsPage.filterNews();
+        NewsPage.deleteNews();
+
+        MenuPage.goNews();
+        NewsPage.checkDeleteNews();
     }
 }

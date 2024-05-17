@@ -1,0 +1,101 @@
+{
+    "name": "Проверяем информацию о приложении",
+    "start": 1715985677872,
+    "stop": 1715985688723,
+    "stage": "finished",
+    "description": "На странице отображаются все элементы",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Авторизация с заполненными полями логина и пароля существующем пользователем",
+            "start": 1715985683457,
+            "stop": 1715985683457,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Отображается страница О приложении",
+            "start": 1715985683814,
+            "stop": 1715985683814,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка элементов экрана О приложении",
+            "start": 1715985686532,
+            "stop": 1715985686532,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "0610d3c0-52c4-493e-9024-f20785fc15e2",
+    "historyId": "3b349edde4460d98f3ece03bc926e9c9",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AboutAppTest.shouldBeInfInAboutApp",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.AboutAppTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldBeInfInAboutApp"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.AboutAppTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

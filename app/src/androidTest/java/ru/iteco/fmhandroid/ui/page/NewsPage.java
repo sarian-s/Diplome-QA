@@ -11,94 +11,83 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
-import androidx.test.espresso.Espresso;
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.matcher.RootMatchers;
+import android.view.View;
 
-import org.hamcrest.Matchers;
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
+import org.junit.Before;
+import org.junit.Rule;
+
+import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
+import ru.iteco.fmhandroid.ui.AppActivity;
+import ru.iteco.fmhandroid.ui.date.Data;
 import ru.iteco.fmhandroid.ui.date.DataHelper;
 import ru.iteco.fmhandroid.ui.elements.News;
 
-public class NewsPage {
-    //создание новости
+public class NewsPage {//создание, редактирование, удаление и фильтр новости
+
+    @Rule
+    public ActivityScenarioRule<AppActivity> activityRule =
+            new ActivityScenarioRule<>(AppActivity.class);
+    private View decorView;
+    @Before
+    public void setUp() {
+        activityRule.getScenario().onActivity(new ActivityScenario.ActivityAction<AppActivity>() {
+            @Override
+            public void perform(AppActivity activity) {
+                decorView = activity.getWindow().getDecorView();
+            }
+        });
+    }
     public static void creationOfNews() {
+        Allure.step("Переход на страницу создания новости");
         News.buttonEditNews.perform(click());
         News.buttonAddNews.check(matches(isDisplayed()));
         News.buttonAddNews.perform(click());
         News.titleNewsCreatWindow.check(matches(isDisplayed()));
     }
-
-    //заполняем поля при создании Новости
-    public static void fillNewsFields(String emptyCategory, String choiceOfCategory, String chosenCategory, String category, String title, String emptyDate, String emptyTime, String withDialPadOrTextInput, String saveOrCancelTime, String emptyDescription, String description) {
-        Integer categoryPosition = null;
-        if (chosenCategory == "Объявление") {
-            categoryPosition = 0;
-        } else if (chosenCategory == "День рождения") {
-            categoryPosition = 1;
-        } else if (chosenCategory == "Зарплата") {
-            categoryPosition = 2;
-        } else if (chosenCategory == "Профсоюз") {
-            categoryPosition = 3;
-        } else if (chosenCategory == "Праздник") {
-            categoryPosition = 4;
-        } else if (chosenCategory == "Массаж") {
-            categoryPosition = 5;
-        } else if (chosenCategory == "Благодарность") {
-            categoryPosition = 6;
-        } else if (chosenCategory == "Нужна помощь") {
-            categoryPosition = 7;
-        }
-
-        // заполнение поля "Категория"
-        if (emptyCategory == "no") {
-            if (choiceOfCategory == "yes") {
-                News.buttonShowingDropdownMenu.perform(click());
-                Espresso.onData(Matchers.anything()).inRoot(RootMatchers.isPlatformPopup()).atPosition(categoryPosition).perform(ViewActions.click());
-            } else {
-                News.categoryNews.perform(replaceText(category));
-                News.categoryNews.check(matches(isDisplayed()));
-            }
-        }
-
-        //заполняем поле заголовок
-        News.titleTextInputNews.perform(replaceText(title));
-
-        //заполняем поле Дата
-        if (emptyDate == "no") {
-            News.dateTextInputNews.perform(click());
-            News.okButton.perform(click());
-        }
-        //заполняем поле Время
-        if (emptyTime == "no") {
-            if (withDialPadOrTextInput == "dial") {
-                News.timeTextInputNews.perform(click());
-                if (saveOrCancelTime == "save") {
-                    News.okButton.perform(click());
-                } else {
-                    News.cancelButton.perform(click());
-                }
-            }
-        }
-
-        //заполняем поле Описание
-        if (emptyDescription == "no") {
-            News.descriptionTextInputNews.perform(replaceText(description));
-            News.descriptionTextInputNews.check(matches(withText(description)));
-        }
+    public static void fillСategory( ) {// заполнение поля "Категория"
+        Allure.step("Заполненное поле Категория");
+        News.buttonShowingDropdownMenu.perform(click());
+        News.buttonShowingDropdownMenu.perform(replaceText(Data.categoryFilledIn));
+        News.buttonShowingDropdownMenu.check(matches(isDisplayed()));
     }
-
-    //Сохраняем новость — нажимаем на кнопку SAVE
-    public static void saveNews() {
+    public static void fillNotСategory( ) {// НЕ заполнено поле "Категория"
+        Allure.step("Пустое поле Категория");
+        News.buttonShowingDropdownMenu.perform(click());
+        News.buttonShowingDropdownMenu.perform(replaceText(Data.categoryNotFilledIn));
+        News.buttonShowingDropdownMenu.check(matches(isDisplayed()));
+    }
+    public static void fillTitle( ) {// заполнение поля "Заголовок"
+        Allure.step("Заполненное поле Заголовок");
+        News.titleTextInputNews.perform(replaceText(Data.titleFilledIn));
+    }
+    public static void fillDatePublication( ) {// заполнение поля "дата публикации"
+        Allure.step("Заполненное поле дата публикации");
+        News.dateTextInputNews.perform(click());
+        News.okButton.perform(click());
+    }
+    public static void fillTime( ) {// заполнение поля "время"
+        Allure.step("Заполненное поле время");
+        News.timeTextInputNews.perform(click());
+        News.okButton.perform(click());
+    }
+    public static void fillDescription( ) {// заполнение поля "описание"
+        Allure.step("Заполненное поле Описание");
+        News.descriptionTextInputNews.perform(replaceText(Data.descriptionFilledIn));
+        News.descriptionTextInputNews.check(matches(withText(Data.descriptionFilledIn)));
+    }
+    public static void saveNews() {//Сохраняем новость — нажимаем на кнопку SAVE
+        Allure.step("Сохранение созданной новости по клику на кнопку сохранить");
         News.buttonSaveNews.perform(click());
     }
-
-    //фильтруем Новости (после нажатия на кнопку редактировать)
-    public static void filterNews(String category) {
+    public static void filterNews() {//фильтруем Новости (после нажатия на кнопку редактировать)
+        Allure.step("Отображается новость с выбранной Категорией");
         News.buttonEditNews.perform(click());
         News.buttonFilterNews.perform(click());
-        News.categoryNews.perform(replaceText(category));
+        News.categoryNews.perform(replaceText(Data.categoryFilledIn));
         News.dateStartFilter.perform(click());
         News.okButton.perform(click());
         News.dateEndFilter.perform(click());
@@ -106,39 +95,35 @@ public class NewsPage {
         News.buttonNotActive.perform(click());
         News.buttonFilter.perform(click());
     }
-
-    //удаление новости
-    public static void deleteNews(String title) {
-        onView(allOf(withId(R.id.delete_news_item_image_view), hasSibling(withText(title)))).perform(click());
+    public static void deleteNews() { //удаление новости
+        Allure.step("Удаляем созданную новость");
+        onView(allOf(withId(R.id.delete_news_item_image_view), hasSibling(withText(Data.titleFilledIn)))).perform(click());
         News.okButton.check(matches(isDisplayed()));
-        // подтверждаем удаление новости
-        News.okButton.perform(click());
+        News.okButton.perform(click());// подтверждаем удаление новости
+    }
+    public static void deleteEditNews() {//удаление отредактированной новости
+        Allure.step("Удаляем отредактированную новость");
+        onView(allOf(withId(R.id.delete_news_item_image_view), hasSibling(withText(Data.newTitleEdit)))).perform(click());
+        News.okButton.check(matches(isDisplayed()));
+        News.okButton.perform(click());// подтверждаем удаление новости
     }
 
-    public static void checkIconVisible() throws InterruptedException {
-        Thread.sleep(1000);
-        News.iconError.check(matches(isDisplayed()));
-
+    public static void checkCreatedNews() {//проверка созданной новости
+        Allure.step("Отображение созданной новости");
+        DataHelper.isDisplayedSwipe(onView(withText(Data.titleFilledIn)), 3, true);
     }
-
-
-    //проверка созданной новости
-    public static void checkCreatedNews(String title) {
-        DataHelper.isDisplayedSwipe(onView(withText(title)), 3, true);
+    public static void checkEditNews() {//проверка отредактированной  новости
+        Allure.step("Отображение отредактированной новости");
+        DataHelper.isDisplayedSwipe(onView(withText(Data.newTitleEdit)), 3, true);
     }
-
-    //проверка удаления новости
-    public static void checkDeleteNews(String title) {
-        onView(withText(title)).check(doesNotExist());
+    public static void checkDeleteNews() { //проверка удаления новости
+        Allure.step("Удаленная новость не отображается");
+        onView(withText(Data.titleFilledIn)).check(doesNotExist());
     }
-
-    //изменение заголовка новости
-    public static void updateTitleNews(String title, String newTitle) {
-        //кликаем по новости
-        onView(allOf(News.editNews, hasSibling(withText(title)))).perform(click());
-        //изменяем title
-        News.titleTextInputNews.perform(replaceText(newTitle));
-        //нажимаем на кнопку сохранить
-        News.buttonSaveNews.perform(click());
+    public static void updateTitleNews() {//изменение заголовка новости
+        Allure.step("Редактирование текста в поле заголовок у Новости");
+        onView(allOf(News.editNews, hasSibling(withText(Data.titleFilledIn)))).perform(click());
+        News.titleTextInputNews.perform(replaceText(Data.newTitleEdit)); //меняем текст заголовка
+        News.buttonSaveNews.perform(click()); //нажимаем на кнопку сохранить
     }
 }

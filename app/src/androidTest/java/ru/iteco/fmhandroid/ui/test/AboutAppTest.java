@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 
 import ru.iteco.fmhandroid.ui.AppActivity;
@@ -30,6 +31,7 @@ public class AboutAppTest {
 
     @Test
     @DisplayName("Проверяем информацию о приложении")
+    @Description("На странице отображаются все элементы")
     public void shouldBeInfInAboutApp() throws InterruptedException {
         MenuPage.goToAboutApp();
         AboutAppPage.checkAboutAppInfIsFull();Thread.sleep(2000);
@@ -37,6 +39,7 @@ public class AboutAppTest {
 
     @Test
     @DisplayName("Кликабельность ссылки Политики конфиденциальности")
+    @Description("Ссылка Политики конфиденциальности кликабельна")
     public void shouldViewPrivacyPolicy() {
         MenuPage.goToAboutApp();
         AboutAppPage.clickPrivacyPolicy();
@@ -45,6 +48,8 @@ public class AboutAppTest {
 
     @Test
     @DisplayName("Кликабельность ссылки Пользовательское соглашение")
+    @Description("Ссылка Пользовательское соглашение кликабельна")
+
     public void shouldViewUserAgreement() {
         MenuPage.goToAboutApp();
         AboutAppPage.clickUserAgreement();

@@ -11,6 +11,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
@@ -33,6 +34,7 @@ public class QuoteTest {
 
     @Test
     @DisplayName("Проверка просмотра цитат и их описаний")
+    @Description("Отображение цитаты и её содержимое")
     public void shouldGoQuotes() {
         elementWaiting(withId(R.id.main_menu_image_button), 2000);
         MenuPage.goQuotes();

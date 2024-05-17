@@ -39,8 +39,6 @@ public class News {
     public static ViewInteraction titleTextInputNews = onView(withId(R.id.news_item_title_text_input_edit_text));
     //заполнение даты
     public static ViewInteraction dateTextInputNews = onView(withId(R.id.news_item_publish_date_text_input_edit_text));
-    //не нашёл R.string...
-    //public static ViewInteraction okButton = onView(withText(R.string.save))
     public static ViewInteraction okButton = onView(withId(android.R.id.button1));
     public static ViewInteraction cancelButton = onView(withText(R.string.cancel));
     //заполняем время
@@ -50,9 +48,6 @@ public class News {
     //кнопка Сохранить
     public static ViewInteraction buttonSaveNews = onView(withId(R.id.save_button));
     public static ViewInteraction iconError = onView(withId(R.id.message));
-    //onView(withText("Заполните пустые поля"));
-    //public static ViewInteraction iconError = onView(withText(R.string.empty_fields)).check(matches(isDisplayed()));
-
     public static Matcher<View> editNews = withId(R.id.edit_news_item_image_view);
 
 }

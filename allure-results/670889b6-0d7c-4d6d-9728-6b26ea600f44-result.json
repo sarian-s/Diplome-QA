@@ -1,0 +1,85 @@
+{
+    "name": "Авторизация с пустыми полями логина и пароля",
+    "start": 1715985728886,
+    "stop": 1715985734885,
+    "stage": "finished",
+    "description": "При авторизации с пустым логином и (или) паролем пользователю отображается сообщение Логин и пароль не могут быть пустыми",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Отображается страница авторизации",
+            "start": 1715985733606,
+            "stop": 1715985733606,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Авторизация с незаполненными полями логина и пароля",
+            "start": 1715985734225,
+            "stop": 1715985734225,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "670889b6-0d7c-4d6d-9728-6b26ea600f44",
+    "historyId": "1235691c3765c8f1e2b8c515483ce9c0",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldTryLogInWithEmptyField",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldTryLogInWithEmptyField"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}

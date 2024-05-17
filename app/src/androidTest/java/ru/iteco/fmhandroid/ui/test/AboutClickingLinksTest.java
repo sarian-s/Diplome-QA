@@ -8,6 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.date.DataHelper;
@@ -27,12 +28,15 @@ public class AboutClickingLinksTest {
 
     @Test
     @DisplayName("Переход по ссылке Политики конфиденциальности")
+    @Description("По клику на ссылку Политики конфиденциальности открывается страница Политики конфиденциальности в браузере")
     public void shouldViewPrivacyPolicy() {
         AboutClickLinksPage.clickLinkPrivacyPolicy();
     }
 
     @Test
     @DisplayName("Переход по ссылке Пользовательское соглашение")
+    @Description("По клику на ссылку Пользовательское соглашение открывается страница Пользовательское соглашение в браузере")
+
     public void sshouldViewUserAgreement() {
         AboutClickLinksPage.clickLinkUserAgreement();
     }

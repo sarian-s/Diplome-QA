@@ -19,6 +19,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import io.qameta.allure.android.runners.AllureAndroidJUnit4;
+import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
@@ -57,6 +58,7 @@ public class AuthorizationTest {
 
     @Test
     @DisplayName("Авторизация с валидными данными")
+    @Description("При успешной авторизации происходит переход на главный экран приложения")
     public void shouldLogInWithValidData() {
         AuthorizationPage.logIn(validLogin, validPassword);
         MenuPage.checkTradeMark();
@@ -64,30 +66,36 @@ public class AuthorizationTest {
 
     @Test
     @DisplayName("Авторизация с неверным логином")
+    @Description("При вводе незарегистрированных значений логина и пароля отображается сообщение" +
+            "Неверный логин или пароль")
     public void shouldLogInWithInValidData() {
         AuthorizationPage.logIn(invalidLogin, validPassword);
         AuthorizationPage.isAuthorizationWindow();
-        onView(withText(R.string.empty_login_or_password))
+        onView(withText(R.string.wrong_login_or_password))
                 .inRoot(withDecorView(Matchers.not(decorView)))
 
-                .check(matches(withText(R.string.empty_login_or_password)))
+                .check(matches(withText(R.string.wrong_login_or_password)))
                 .check(matches(isDisplayed()));
     }
 
     @Test
     @DisplayName("Авторизация с неверным паролем")
+    @Description("При вводе незарегистрированных значений логина и пароля отображается сообщение " +
+            "Неверный логин или пароль")
     public void shouldPasswordWithInValidData()  {
         AuthorizationPage.logIn(validLogin, invalidPassword);
         AuthorizationPage.isAuthorizationWindow();
-        onView(withText(R.string.empty_login_or_password))
+        onView(withText(R.string.wrong_login_or_password))
                 .inRoot(withDecorView(Matchers.not(decorView)))
 
-                .check(matches(withText(R.string.empty_login_or_password)))
+                .check(matches(withText(R.string.wrong_login_or_password)))
                 .check(matches(isDisplayed()));
     }
 
     @Test
     @DisplayName("Авторизация с пустыми полями логина и пароля")
+    @Description("При авторизации с пустым логином и (или) паролем пользователю отображается сообщение " +
+            "Логин и пароль не могут быть пустыми")
     public void shouldTryLogInWithEmptyField() {
         AuthorizationPage.clickInButton();
         AuthorizationPage.isAuthorizationWindow();

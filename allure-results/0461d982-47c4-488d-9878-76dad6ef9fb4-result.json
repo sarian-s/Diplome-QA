@@ -1,0 +1,101 @@
+{
+    "name": "Проверка просмотра цитат и их описаний",
+    "start": 1715985823340,
+    "stop": 1715985829869,
+    "stage": "finished",
+    "description": "Отображение цитаты и её содержимое",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+        {
+            "name": "Отображается страница цитаты",
+            "start": 1715985829073,
+            "stop": 1715985829073,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Отображение цитаты",
+            "start": 1715985829388,
+            "stop": 1715985829388,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Отображение описаниятцитаты",
+            "start": 1715985829670,
+            "stop": 1715985829670,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        }
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "0461d982-47c4-488d-9878-76dad6ef9fb4",
+    "historyId": "fd2303b8dd6a0c6f5b621239f63b6840",
+    "fullName": "ru.iteco.fmhandroid.ui.test.QuoteTest.shouldGoQuotes",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.QuoteTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "shouldGoQuotes"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.QuoteTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        }
+    ]
+}
