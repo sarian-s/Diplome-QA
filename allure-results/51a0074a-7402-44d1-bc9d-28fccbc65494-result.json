@@ -1,17 +1,17 @@
 {
-    "name": "Удаление новости",
-    "start": 1715985780377,
-    "stop": 1715985795127,
+    "name": "Редактирование новости",
+    "start": 1716060475136,
+    "stop": 1716060493268,
     "stage": "finished",
-    "description": "Удаленная новость не отобржается",
+    "description": "У новости в поле Заголовок отображается отредактированный текст",
     "descriptionHtml": null,
     "status": "passed",
     "statusDetails": null,
     "steps": [
         {
             "name": "Отображается страница Новости",
-            "start": 1715985785638,
-            "stop": 1715985785638,
+            "start": 1716060480418,
+            "stop": 1716060480418,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -26,8 +26,8 @@
         },
         {
             "name": "Переход на страницу создания новости",
-            "start": 1715985786307,
-            "stop": 1715985786308,
+            "start": 1716060481053,
+            "stop": 1716060481053,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -42,8 +42,8 @@
         },
         {
             "name": "Заполненное поле Категория",
-            "start": 1715985786992,
-            "stop": 1715985786993,
+            "start": 1716060481719,
+            "stop": 1716060481720,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -58,8 +58,8 @@
         },
         {
             "name": "Заполненное поле Заголовок",
-            "start": 1715985787434,
-            "stop": 1715985787434,
+            "start": 1716060482081,
+            "stop": 1716060482081,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -74,8 +74,8 @@
         },
         {
             "name": "Заполненное поле дата публикации",
-            "start": 1715985787439,
-            "stop": 1715985787439,
+            "start": 1716060482087,
+            "stop": 1716060482087,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -90,8 +90,8 @@
         },
         {
             "name": "Заполненное поле время",
-            "start": 1715985788650,
-            "stop": 1715985788651,
+            "start": 1716060482990,
+            "stop": 1716060482990,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -106,8 +106,8 @@
         },
         {
             "name": "Заполненное поле Описание",
-            "start": 1715985789342,
-            "stop": 1715985789342,
+            "start": 1716060483908,
+            "stop": 1716060483908,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -122,8 +122,8 @@
         },
         {
             "name": "Сохранение созданной новости по клику на кнопку сохранить",
-            "start": 1715985789362,
-            "stop": 1715985789362,
+            "start": 1716060483925,
+            "stop": 1716060483925,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -138,8 +138,8 @@
         },
         {
             "name": "Отображение созданной новости",
-            "start": 1715985789653,
-            "stop": 1715985789653,
+            "start": 1716060484208,
+            "stop": 1716060484208,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -154,8 +154,8 @@
         },
         {
             "name": "Отображается страница Новости",
-            "start": 1715985789655,
-            "stop": 1715985789655,
+            "start": 1716060484208,
+            "stop": 1716060484209,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -170,8 +170,8 @@
         },
         {
             "name": "Отображается новость с выбранной Категорией",
-            "start": 1715985790281,
-            "stop": 1715985790281,
+            "start": 1716060484820,
+            "stop": 1716060484820,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -185,9 +185,9 @@
             ]
         },
         {
-            "name": "Удаляем созданную новость",
-            "start": 1715985793433,
-            "stop": 1715985793433,
+            "name": "Редактирование текста в поле заголовок у Новости",
+            "start": 1716060487966,
+            "stop": 1716060487966,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -202,8 +202,8 @@
         },
         {
             "name": "Отображается страница Новости",
-            "start": 1715985794065,
-            "stop": 1715985794065,
+            "start": 1716060488592,
+            "stop": 1716060488592,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -217,9 +217,41 @@
             ]
         },
         {
-            "name": "Удаленная новость не отображается",
-            "start": 1715985794713,
-            "stop": 1715985794713,
+            "name": "Отображается новость с выбранной Категорией",
+            "start": 1716060489191,
+            "stop": 1716060489191,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Отображение отредактированной новости",
+            "start": 1716060492281,
+            "stop": 1716060492281,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Удаляем отредактированную новость",
+            "start": 1716060492282,
+            "stop": 1716060492282,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -237,9 +269,9 @@
     ],
     "parameters": [
     ],
-    "uuid": "ec532e08-4f19-44f2-8383-89ade23c0adc",
-    "historyId": "ded63bc9195d31034658c0362a665ade",
-    "fullName": "ru.iteco.fmhandroid.ui.test.NewsTest.shouldDeleteNews",
+    "uuid": "51a0074a-7402-44d1-bc9d-28fccbc65494",
+    "historyId": "b185a30b4d417d88d10471fa38a7937a",
+    "fullName": "ru.iteco.fmhandroid.ui.test.NewsTest.shouldChangeNews",
     "labels": [
         {
             "name": "package",
@@ -251,7 +283,7 @@
         },
         {
             "name": "testMethod",
-            "value": "shouldDeleteNews"
+            "value": "shouldChangeNews"
         },
         {
             "name": "suite",
@@ -263,7 +295,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
         },
         {
             "name": "framework",

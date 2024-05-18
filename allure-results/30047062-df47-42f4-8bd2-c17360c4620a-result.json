@@ -1,7 +1,7 @@
 {
     "name": "Переход по ссылке Политики конфиденциальности",
-    "start": 1715985716781,
-    "stop": 1715985728873,
+    "start": 1716060375908,
+    "stop": 1716060387793,
     "stage": "finished",
     "description": "По клику на ссылку Политики конфиденциальности открывается страница Политики конфиденциальности в браузере",
     "descriptionHtml": null,
@@ -13,8 +13,8 @@
     "steps": [
         {
             "name": "В браузере открыта страница Политики конфиденциальности",
-            "start": 1715985721512,
-            "stop": 1715985721512,
+            "start": 1716060380440,
+            "stop": 1716060380440,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -29,8 +29,8 @@
         },
         {
             "name": "Отображается страница О приложении",
-            "start": 1715985721512,
-            "stop": 1715985721512,
+            "start": 1716060380440,
+            "stop": 1716060380440,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -48,7 +48,7 @@
     ],
     "parameters": [
     ],
-    "uuid": "552950c0-f82b-438c-82bf-4173671fc644",
+    "uuid": "30047062-df47-42f4-8bd2-c17360c4620a",
     "historyId": "51a8d1a99175b794dadf6e463abf5979",
     "fullName": "ru.iteco.fmhandroid.ui.test.AboutClickingLinksTest.shouldViewPrivacyPolicy",
     "labels": [
@@ -74,7 +74,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
         },
         {
             "name": "framework",

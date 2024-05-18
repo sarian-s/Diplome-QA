@@ -13,7 +13,7 @@ public class AuthorizationPage { //Отображение окна автори�
         Authorization.authorization.check(matches(isDisplayed()));
     }
     public static void logIn(String login, String password) {//Выполняем вход в аккаунт
-        Allure.step("Авторизация с заполненными полями логина и пароля существующем пользователем");
+        Allure.step("Авторизация с заполненными полями логина и пароля");
         Authorization.loginInput.perform(replaceText(login));
         Authorization.loginInput.check(matches(withText(login)));
         Authorization.passwordInput.perform(replaceText(password));

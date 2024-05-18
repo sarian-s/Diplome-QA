@@ -1,7 +1,7 @@
 {
     "name": "Создание новости без категории",
-    "start": 1715985795140,
-    "stop": 1715985805139,
+    "start": 1716060465206,
+    "stop": 1716060475126,
     "stage": "finished",
     "description": "Пользователю отображается сообщение Заполните пустые поля",
     "descriptionHtml": null,
@@ -10,8 +10,8 @@
     "steps": [
         {
             "name": "Отображается страница Новости",
-            "start": 1715985800491,
-            "stop": 1715985800491,
+            "start": 1716060470524,
+            "stop": 1716060470524,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -26,8 +26,8 @@
         },
         {
             "name": "Переход на страницу создания новости",
-            "start": 1715985801148,
-            "stop": 1715985801148,
+            "start": 1716060471134,
+            "stop": 1716060471134,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -42,8 +42,8 @@
         },
         {
             "name": "Пустое поле Категория",
-            "start": 1715985801833,
-            "stop": 1715985801833,
+            "start": 1716060471819,
+            "stop": 1716060471819,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -58,8 +58,8 @@
         },
         {
             "name": "Заполненное поле Заголовок",
-            "start": 1715985802239,
-            "stop": 1715985802239,
+            "start": 1716060472208,
+            "stop": 1716060472208,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -74,8 +74,8 @@
         },
         {
             "name": "Заполненное поле дата публикации",
-            "start": 1715985802246,
-            "stop": 1715985802246,
+            "start": 1716060472213,
+            "stop": 1716060472213,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -90,8 +90,8 @@
         },
         {
             "name": "Заполненное поле время",
-            "start": 1715985803172,
-            "stop": 1715985803172,
+            "start": 1716060473138,
+            "stop": 1716060473138,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -106,8 +106,8 @@
         },
         {
             "name": "Заполненное поле Описание",
-            "start": 1715985804135,
-            "stop": 1715985804135,
+            "start": 1716060474123,
+            "stop": 1716060474123,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -122,8 +122,8 @@
         },
         {
             "name": "Сохранение созданной новости по клику на кнопку сохранить",
-            "start": 1715985804150,
-            "stop": 1715985804150,
+            "start": 1716060474138,
+            "stop": 1716060474139,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -138,8 +138,8 @@
         },
         {
             "name": "Сохранение созданной новости по клику на кнопку сохранить",
-            "start": 1715985804490,
-            "stop": 1715985804490,
+            "start": 1716060474492,
+            "stop": 1716060474492,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -157,7 +157,7 @@
     ],
     "parameters": [
     ],
-    "uuid": "b733d806-18f6-40db-ad6d-c927ae753b11",
+    "uuid": "1db21946-f797-4d5f-b47b-64723ae74d8f",
     "historyId": "706a6a46b168e155368e360dbc15e0ca",
     "fullName": "ru.iteco.fmhandroid.ui.test.NewsTest.shouldErrorNotCategory",
     "labels": [
@@ -183,7 +183,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
         },
         {
             "name": "framework",

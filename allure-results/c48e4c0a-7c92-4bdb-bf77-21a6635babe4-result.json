@@ -1,7 +1,7 @@
 {
     "name": "Авторизация с валидными данными",
-    "start": 1715985745014,
-    "stop": 1715985751982,
+    "start": 1716060414906,
+    "stop": 1716060421948,
     "stage": "finished",
     "description": "При успешной авторизации происходит переход на главный экран приложения",
     "descriptionHtml": null,
@@ -9,9 +9,9 @@
     "statusDetails": null,
     "steps": [
         {
-            "name": "Авторизация с заполненными полями логина и пароля существующем пользователем",
-            "start": 1715985749343,
-            "stop": 1715985749343,
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716060419246,
+            "stop": 1716060419246,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -26,8 +26,8 @@
         },
         {
             "name": "Отображается иконка авторизации",
-            "start": 1715985749749,
-            "stop": 1715985749749,
+            "start": 1716060419670,
+            "stop": 1716060419670,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -45,7 +45,7 @@
     ],
     "parameters": [
     ],
-    "uuid": "f52437f0-1ccc-4384-ac7b-b24b6c7b9a61",
+    "uuid": "c48e4c0a-7c92-4bdb-bf77-21a6635babe4",
     "historyId": "36c569213accb6f6d9ffaca23c259ec8",
     "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldLogInWithValidData",
     "labels": [
@@ -71,7 +71,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(889)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
         },
         {
             "name": "framework",

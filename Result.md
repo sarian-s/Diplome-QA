@@ -11,6 +11,8 @@
 
 ![allure-result-diagrams](https://github.com/sarian-s/Diplome-QA/blob/masters/allure-result-diagrams.jpg)
 
+[Allure-results](https://github.com/sarian-s/Diplome-QA/blob/masters/allure-results.zip)
+
 ## Результаты сравнения времени проверки приложения:
 
 - написание тест кейсов и чек-листа: 40 часов
