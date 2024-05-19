@@ -86,6 +86,8 @@ Espresso: Нативный фреймворк для автоматизиров�
 
 [Тест-кейсы](https://docs.google.com/spreadsheets/d/1FW8404e0lRLdWW-vVB6siEfMSK2b4WXFJstIy-IrsJA/edit?usp=sharing)
 
+[Отчет о тестировании](https://github.com/sarian-s/Diplome-QA/blob/masters/Result.md)
+
 ## Оценка времени на тестирование
 
 Составить чек-лист 6 часов
