@@ -7,11 +7,11 @@
 В ходе автоматического тестирования приложения на эмуляторе Pixel 4 API 29
 успешно пройдено 11 тестов (73,33 % - успешных тестов)
 
-![Allure result](https://github.com/sarian-s/Diplome-QA/blob/masters/allure-result.jpg)
+![Allure result](https://github.com/sarian-s/Diplome-QA/blob/corrections/allure-result.jpg)
 
-![allure-result-diagrams](https://github.com/sarian-s/Diplome-QA/blob/masters/allure-result-diagrams.jpg)
+![allure-result-diagrams](https://github.com/sarian-s/Diplome-QA/blob/corrections/allure-result-diagrams.jpg)
 
-[Allure-results](https://github.com/sarian-s/Diplome-QA/blob/masters/allure-results.zip)
+[Allure-results](https://github.com/sarian-s/Diplome-QA/blob/corrections/allure-results.zip)
 
 ## Результаты сравнения времени проверки приложения:
 
