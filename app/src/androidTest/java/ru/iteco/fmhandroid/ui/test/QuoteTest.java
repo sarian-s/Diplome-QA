@@ -2,9 +2,9 @@ package ru.iteco.fmhandroid.ui.test;
 
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
-import static ru.iteco.fmhandroid.ui.date.DataHelper.elementWaiting;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.elementWaiting;
 
-import androidx.test.rule.ActivityTestRule;
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -16,7 +16,7 @@ import io.qameta.allure.android.runners.AllureAndroidJUnit4;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
-import ru.iteco.fmhandroid.ui.date.DataHelper;
+import ru.iteco.fmhandroid.ui.data.DataHelper;
 import ru.iteco.fmhandroid.ui.page.MenuPage;
 import ru.iteco.fmhandroid.ui.page.QuotePage;
 
@@ -24,21 +24,26 @@ import ru.iteco.fmhandroid.ui.page.QuotePage;
 
 public class QuoteTest {
     @Rule
-    public ActivityTestRule<AppActivity> activityTestRule =
-            new ActivityTestRule<>(AppActivity.class);
+    public ActivityScenarioRule<AppActivity> activityRule =
+            new ActivityScenarioRule<>(AppActivity.class);
 
     @Before
     public void logIn() {
-        DataHelper.authorizedUser();
+        DataHelper dataHelper = new DataHelper();
+        dataHelper.authorizedUser();
     }
 
     @Test
     @DisplayName("Проверка просмотра цитат и их описаний")
     @Description("Отображение цитаты и её содержимое")
     public void shouldGoQuotes() {
+        MenuPage menuPage = new MenuPage();
+        QuotePage quotePage = new QuotePage();
+
         elementWaiting(withId(R.id.main_menu_image_button), 2000);
-        MenuPage.goQuotes();
-        QuotePage.viewQuote();
-        QuotePage.checkQuoteDisplay();
+
+        menuPage.goQuotes();
+        quotePage.viewQuote();
+        quotePage.checkQuoteDisplay();
     }
 }

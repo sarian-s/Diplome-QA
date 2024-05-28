@@ -1,7 +1,7 @@
 {
     "name": "Удаление новости",
-    "start": 1716060450553,
-    "stop": 1716060465198,
+    "start": 1716933509095,
+    "stop": 1716933522639,
     "stage": "finished",
     "description": "Удаленная новость не отобржается",
     "descriptionHtml": null,
@@ -9,9 +9,25 @@
     "statusDetails": null,
     "steps": [
         {
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716933513464,
+            "stop": 1716933513464,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
             "name": "Отображается страница Новости",
-            "start": 1716060455919,
-            "stop": 1716060455919,
+            "start": 1716933513470,
+            "stop": 1716933513471,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -26,8 +42,8 @@
         },
         {
             "name": "Переход на страницу создания новости",
-            "start": 1716060456554,
-            "stop": 1716060456554,
+            "start": 1716933514087,
+            "stop": 1716933514087,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -42,8 +58,8 @@
         },
         {
             "name": "Заполненное поле Категория",
-            "start": 1716060457274,
-            "stop": 1716060457274,
+            "start": 1716933514779,
+            "stop": 1716933514779,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -58,8 +74,8 @@
         },
         {
             "name": "Заполненное поле Заголовок",
-            "start": 1716060457659,
-            "stop": 1716060457659,
+            "start": 1716933515150,
+            "stop": 1716933515150,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -74,8 +90,8 @@
         },
         {
             "name": "Заполненное поле дата публикации",
-            "start": 1716060457664,
-            "stop": 1716060457664,
+            "start": 1716933515157,
+            "stop": 1716933515157,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -90,8 +106,8 @@
         },
         {
             "name": "Заполненное поле время",
-            "start": 1716060458571,
-            "stop": 1716060458571,
+            "start": 1716933516083,
+            "stop": 1716933516083,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -106,8 +122,8 @@
         },
         {
             "name": "Заполненное поле Описание",
-            "start": 1716060459567,
-            "stop": 1716060459567,
+            "start": 1716933517003,
+            "stop": 1716933517003,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -122,8 +138,8 @@
         },
         {
             "name": "Сохранение созданной новости по клику на кнопку сохранить",
-            "start": 1716060459575,
-            "stop": 1716060459575,
+            "start": 1716933517012,
+            "stop": 1716933517012,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -138,8 +154,8 @@
         },
         {
             "name": "Отображение созданной новости",
-            "start": 1716060459850,
-            "stop": 1716060459851,
+            "start": 1716933517299,
+            "stop": 1716933517299,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -154,8 +170,8 @@
         },
         {
             "name": "Отображается страница Новости",
-            "start": 1716060459852,
-            "stop": 1716060459852,
+            "start": 1716933517299,
+            "stop": 1716933517299,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -170,8 +186,8 @@
         },
         {
             "name": "Отображается новость с выбранной Категорией",
-            "start": 1716060460458,
-            "stop": 1716060460459,
+            "start": 1716933517926,
+            "stop": 1716933517926,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -186,8 +202,8 @@
         },
         {
             "name": "Удаляем созданную новость",
-            "start": 1716060463592,
-            "stop": 1716060463592,
+            "start": 1716933521097,
+            "stop": 1716933521097,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -202,8 +218,8 @@
         },
         {
             "name": "Отображается страница Новости",
-            "start": 1716060464216,
-            "stop": 1716060464216,
+            "start": 1716933521740,
+            "stop": 1716933521740,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -218,8 +234,8 @@
         },
         {
             "name": "Удаленная новость не отображается",
-            "start": 1716060464832,
-            "stop": 1716060464832,
+            "start": 1716933522321,
+            "stop": 1716933522321,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -237,7 +253,7 @@
     ],
     "parameters": [
     ],
-    "uuid": "e7409cef-bea5-4e25-8051-fe56cf77caa1",
+    "uuid": "87b6cd74-7e01-4682-8b2a-203e0ab5a8c8",
     "historyId": "ded63bc9195d31034658c0362a665ade",
     "fullName": "ru.iteco.fmhandroid.ui.test.NewsTest.shouldDeleteNews",
     "labels": [
@@ -263,7 +279,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1354)"
         },
         {
             "name": "framework",

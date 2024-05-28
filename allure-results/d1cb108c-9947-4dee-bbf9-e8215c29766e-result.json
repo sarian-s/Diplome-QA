@@ -1,17 +1,17 @@
 {
-    "name": "Кликабельность ссылки Пользовательское соглашение",
-    "start": 1716060348113,
-    "stop": 1716060355287,
+    "name": "Проверяем информацию о приложении",
+    "start": 1716933411561,
+    "stop": 1716933419945,
     "stage": "finished",
-    "description": "Ссылка Пользовательское соглашение кликабельна",
+    "description": "На странице отображаются все элементы",
     "descriptionHtml": null,
     "status": "passed",
     "statusDetails": null,
     "steps": [
         {
-            "name": "Отображается страница О приложении",
-            "start": 1716060352572,
-            "stop": 1716060352572,
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716933417093,
+            "stop": 1716933417093,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -25,9 +25,25 @@
             ]
         },
         {
-            "name": "Кликабельности ссылки Пользовательского соглашения",
-            "start": 1716060355158,
-            "stop": 1716060355158,
+            "name": "Отображается страница О приложении",
+            "start": 1716933417122,
+            "stop": 1716933417122,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Проверка элементов экрана О приложении",
+            "start": 1716933419706,
+            "stop": 1716933419706,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -45,9 +61,9 @@
     ],
     "parameters": [
     ],
-    "uuid": "a302c233-40ac-432c-88d9-50dee9a9882a",
-    "historyId": "fe9e5272778ac9fd23b78adf2434dbc0",
-    "fullName": "ru.iteco.fmhandroid.ui.test.AboutAppTest.shouldViewUserAgreement",
+    "uuid": "d1cb108c-9947-4dee-bbf9-e8215c29766e",
+    "historyId": "3b349edde4460d98f3ece03bc926e9c9",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AboutAppTest.shouldBeInfInAboutApp",
     "labels": [
         {
             "name": "package",
@@ -59,7 +75,7 @@
         },
         {
             "name": "testMethod",
-            "value": "shouldViewUserAgreement"
+            "value": "shouldBeInfInAboutApp"
         },
         {
             "name": "suite",
@@ -71,7 +87,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1354)"
         },
         {
             "name": "framework",

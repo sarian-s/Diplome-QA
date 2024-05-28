@@ -1,17 +1,17 @@
 {
-    "name": "Авторизация с валидными данными",
-    "start": 1716060414906,
-    "stop": 1716060421948,
+    "name": "Кликабельность ссылки Пользовательское соглашение",
+    "start": 1716933419964,
+    "stop": 1716933427103,
     "stage": "finished",
-    "description": "При успешной авторизации происходит переход на главный экран приложения",
+    "description": "Ссылка Пользовательское соглашение кликабельна",
     "descriptionHtml": null,
     "status": "passed",
     "statusDetails": null,
     "steps": [
         {
             "name": "Авторизация с заполненными полями логина и пароля",
-            "start": 1716060419246,
-            "stop": 1716060419246,
+            "start": 1716933424391,
+            "stop": 1716933424391,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -25,9 +25,25 @@
             ]
         },
         {
-            "name": "Отображается иконка авторизации",
-            "start": 1716060419670,
-            "stop": 1716060419670,
+            "name": "Отображается страница О приложении",
+            "start": 1716933424413,
+            "stop": 1716933424413,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Кликабельности ссылки Пользовательского соглашения",
+            "start": 1716933426981,
+            "stop": 1716933426981,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -45,9 +61,9 @@
     ],
     "parameters": [
     ],
-    "uuid": "c48e4c0a-7c92-4bdb-bf77-21a6635babe4",
-    "historyId": "36c569213accb6f6d9ffaca23c259ec8",
-    "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldLogInWithValidData",
+    "uuid": "00512aba-f913-4ed4-9f44-0f602941009e",
+    "historyId": "fe9e5272778ac9fd23b78adf2434dbc0",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AboutAppTest.shouldViewUserAgreement",
     "labels": [
         {
             "name": "package",
@@ -55,15 +71,15 @@
         },
         {
             "name": "testClass",
-            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+            "value": "ru.iteco.fmhandroid.ui.test.AboutAppTest"
         },
         {
             "name": "testMethod",
-            "value": "shouldLogInWithValidData"
+            "value": "shouldViewUserAgreement"
         },
         {
             "name": "suite",
-            "value": "ru.iteco.fmhandroid.ui.test.AuthorizationTest"
+            "value": "ru.iteco.fmhandroid.ui.test.AboutAppTest"
         },
         {
             "name": "host",
@@ -71,7 +87,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1354)"
         },
         {
             "name": "framework",

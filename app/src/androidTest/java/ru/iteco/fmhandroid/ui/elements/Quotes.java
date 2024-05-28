@@ -1,15 +1,11 @@
 package ru.iteco.fmhandroid.ui.elements;
 
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
-
-import androidx.test.espresso.ViewInteraction;
-
-import ru.iteco.fmhandroid.ui.date.Data;
-
+import ru.iteco.fmhandroid.R;
+import ru.iteco.fmhandroid.ui.data.Data;
 
 public class Quotes {  //Цитаты
-    public static ViewInteraction missionTitleText = onView(withText(Data.missionTitle));
-    public static ViewInteraction descriptionText = onView(withText(Data.missionDescription));
-
+    public static String missionTitleText = Data.missionTitle;
+    public static String descriptionText = Data.missionDescription;
+    public static int linkAgreement = R.id.about_terms_of_use_value_text_view;
+    public static int linkPrivacy = R.id.about_privacy_policy_value_text_view;
 }

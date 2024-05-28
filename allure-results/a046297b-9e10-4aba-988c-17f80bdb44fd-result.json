@@ -1,7 +1,7 @@
 {
     "name": "Кликабельность ссылки Политики конфиденциальности",
-    "start": 1716060355298,
-    "stop": 1716060362434,
+    "start": 1716933427114,
+    "stop": 1716933434323,
     "stage": "finished",
     "description": "Ссылка Политики конфиденциальности кликабельна",
     "descriptionHtml": null,
@@ -9,9 +9,25 @@
     "statusDetails": null,
     "steps": [
         {
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716933431588,
+            "stop": 1716933431588,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
             "name": "Отображается страница О приложении",
-            "start": 1716060359736,
-            "stop": 1716060359736,
+            "start": 1716933431611,
+            "stop": 1716933431611,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -26,8 +42,8 @@
         },
         {
             "name": "Кликабельности ссылки Политики конфиденциальности",
-            "start": 1716060362310,
-            "stop": 1716060362310,
+            "start": 1716933434182,
+            "stop": 1716933434182,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -45,7 +61,7 @@
     ],
     "parameters": [
     ],
-    "uuid": "ead466e0-b6a6-455f-bf38-978dc38a72e3",
+    "uuid": "a046297b-9e10-4aba-988c-17f80bdb44fd",
     "historyId": "276c6e8561897f80da88ddbafc4f86e6",
     "fullName": "ru.iteco.fmhandroid.ui.test.AboutAppTest.shouldViewPrivacyPolicy",
     "labels": [
@@ -71,7 +87,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1354)"
         },
         {
             "name": "framework",

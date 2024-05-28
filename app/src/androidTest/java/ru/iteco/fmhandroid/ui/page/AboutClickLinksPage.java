@@ -1,17 +1,19 @@
 package ru.iteco.fmhandroid.ui.page;
 
+import ru.iteco.fmhandroid.ui.data.DataHelper;
+
 import io.qameta.allure.kotlin.Allure;
-import ru.iteco.fmhandroid.ui.date.DataHelper;
 
 public class AboutClickLinksPage {
-    public static void clickLinkPrivacyPolicy() { // Проверка перехода по ссылки Политики конфиденциальности
+    public void clickLinkPrivacyPolicy() {
         Allure.step("В браузере открыта страница Политики конфиденциальности");
-        DataHelper.shouldViewPrivacyPolicy();
+        DataHelper dataHelper = new DataHelper();// Проверка перехода по ссылки Политики конфиденциальности
+        dataHelper.shouldViewPrivacyPolicy();
     }
 
-    public static void clickLinkUserAgreement() { // Проверка перехода по ссылки Пользовательского соглашения
+    public void clickLinkUserAgreement() {
         Allure.step("В браузере открыта страница Пользовательского соглашения");
-
-        DataHelper.sshouldViewUserAgreement();
+        DataHelper dataHelper = new DataHelper();// Проверка перехода по ссылки Пользовательского соглашения
+        dataHelper.shouldViewUserAgreement();
     }
 }

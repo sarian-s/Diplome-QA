@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 import io.qameta.allure.kotlin.Description;
 import io.qameta.allure.kotlin.junit4.DisplayName;
 import ru.iteco.fmhandroid.ui.AppActivity;
-import ru.iteco.fmhandroid.ui.date.DataHelper;
+import ru.iteco.fmhandroid.ui.data.DataHelper;
 import ru.iteco.fmhandroid.ui.page.AboutClickLinksPage;
 
 @RunWith(AndroidJUnit4.class)
@@ -22,15 +22,16 @@ public class AboutClickingLinksTest {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Before
-    public void main() {
-        DataHelper.authorizedUser();
+    public void main() {DataHelper dataHelper = new DataHelper();
+        dataHelper.authorizedUser();
     }
 
     @Test
     @DisplayName("Переход по ссылке Политики конфиденциальности")
     @Description("По клику на ссылку Политики конфиденциальности открывается страница Политики конфиденциальности в браузере")
     public void shouldViewPrivacyPolicy() {
-        AboutClickLinksPage.clickLinkPrivacyPolicy();
+        AboutClickLinksPage aboutClickLinksPage = new AboutClickLinksPage();
+        aboutClickLinksPage.clickLinkPrivacyPolicy();
     }
 
     @Test
@@ -38,7 +39,8 @@ public class AboutClickingLinksTest {
     @Description("По клику на ссылку Пользовательское соглашение открывается страница Пользовательское соглашение в браузере")
 
     public void sshouldViewUserAgreement() {
-        AboutClickLinksPage.clickLinkUserAgreement();
+        AboutClickLinksPage aboutClickLinksPage = new AboutClickLinksPage();
+        aboutClickLinksPage.clickLinkUserAgreement();
     }
 
 }

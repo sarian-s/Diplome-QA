@@ -1,17 +1,17 @@
 {
-    "name": "Авторизация с пустыми полями логина и пароля",
-    "start": 1716060387804,
-    "stop": 1716060393683,
+    "name": "Авторизация с валидными данными",
+    "start": 1716933476362,
+    "stop": 1716933483025,
     "stage": "finished",
-    "description": "При авторизации с пустым логином и (или) паролем пользователю отображается сообщение Логин и пароль не могут быть пустыми",
+    "description": "При успешной авторизации происходит переход на главный экран приложения",
     "descriptionHtml": null,
     "status": "passed",
     "statusDetails": null,
     "steps": [
         {
-            "name": "Отображается страница авторизации",
-            "start": 1716060392429,
-            "stop": 1716060392429,
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716933480584,
+            "stop": 1716933480584,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -25,9 +25,25 @@
             ]
         },
         {
-            "name": "Авторизация с незаполненными полями логина и пароля",
-            "start": 1716060393063,
-            "stop": 1716060393064,
+            "name": "Авторизация с заполненными полями логина и пароля",
+            "start": 1716933480586,
+            "stop": 1716933480586,
+            "stage": "finished",
+            "description": null,
+            "descriptionHtml": null,
+            "status": "passed",
+            "statusDetails": null,
+            "steps": [
+            ],
+            "attachments": [
+            ],
+            "parameters": [
+            ]
+        },
+        {
+            "name": "Отображается иконка авторизации",
+            "start": 1716933480957,
+            "stop": 1716933480957,
             "stage": "finished",
             "description": null,
             "descriptionHtml": null,
@@ -45,9 +61,9 @@
     ],
     "parameters": [
     ],
-    "uuid": "d7bc0184-bd64-4719-909b-191086157c83",
-    "historyId": "1235691c3765c8f1e2b8c515483ce9c0",
-    "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldTryLogInWithEmptyField",
+    "uuid": "33a9fedf-6c7a-4f9a-9d80-aa497a76f713",
+    "historyId": "36c569213accb6f6d9ffaca23c259ec8",
+    "fullName": "ru.iteco.fmhandroid.ui.test.AuthorizationTest.shouldLogInWithValidData",
     "labels": [
         {
             "name": "package",
@@ -59,7 +75,7 @@
         },
         {
             "name": "testMethod",
-            "value": "shouldTryLogInWithEmptyField"
+            "value": "shouldLogInWithValidData"
         },
         {
             "name": "suite",
@@ -71,7 +87,7 @@
         },
         {
             "name": "thread",
-            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(484)"
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(1354)"
         },
         {
             "name": "framework",

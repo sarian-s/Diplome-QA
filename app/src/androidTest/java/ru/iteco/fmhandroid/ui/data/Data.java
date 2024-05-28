@@ -1,4 +1,4 @@
-package ru.iteco.fmhandroid.ui.date;
+package ru.iteco.fmhandroid.ui.data;
 
 public class Data {
     public static final String validLogin = "login2";

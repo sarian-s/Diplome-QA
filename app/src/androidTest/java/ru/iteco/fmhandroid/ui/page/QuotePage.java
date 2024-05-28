@@ -4,19 +4,21 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 
+import static ru.iteco.fmhandroid.ui.data.DataHelper.GetElementTextString;
+
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.ui.elements.Quotes;
 
 public class QuotePage {
 
-    public static void viewQuote() {// просмотр цитаты и её описания
+    public void viewQuote() {// просмотр цитаты и её описания
         Allure.step("Отображение цитаты");
-        Quotes.missionTitleText.check(matches(isDisplayed()));
-        Quotes.missionTitleText.perform(click());
+        GetElementTextString(Quotes.missionTitleText).check(matches(isDisplayed()));
+        GetElementTextString(Quotes.missionTitleText).perform(click());
     }
 
-    public static void checkQuoteDisplay() { //проверка отображения цитаты и описания
+    public void checkQuoteDisplay() { //проверка отображения цитаты и описания
         Allure.step("Отображение описаниятцитаты");
-        Quotes.descriptionText.check(matches(isDisplayed()));
+        GetElementTextString(Quotes.descriptionText).check(matches(isDisplayed()));
     }
 }

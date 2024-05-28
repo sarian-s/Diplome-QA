@@ -6,23 +6,27 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import static ru.iteco.fmhandroid.ui.data.DataHelper.GetElementHint;
+import static ru.iteco.fmhandroid.ui.data.DataHelper.GetElementText;
+
 import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.ui.elements.Authorization;
 public class AuthorizationPage { //Отображение окна авторизации
-    public static void isAuthorizationWindow() {
-        Authorization.authorization.check(matches(isDisplayed()));
-    }
-    public static void logIn(String login, String password) {//Выполняем вход в аккаунт
+    public  void isAuthorizationWindow() {
         Allure.step("Авторизация с заполненными полями логина и пароля");
-        Authorization.loginInput.perform(replaceText(login));
-        Authorization.loginInput.check(matches(withText(login)));
-        Authorization.passwordInput.perform(replaceText(password));
-        Authorization.passwordInput.check(matches(withText(password)));
-        Authorization.signInButton.perform(click());
+        GetElementText(Authorization.authorization).check(matches(isDisplayed()));
     }
-    public static void clickInButton() { //Кликаем на конпку Войти
+    public void logIn(String login, String password) {//Выполняем вход в аккаунт
+        Allure.step("Авторизация с заполненными полями логина и пароля");
+        GetElementHint(Authorization.loginInput).perform(replaceText(login));
+        GetElementHint(Authorization.loginInput).check(matches(withText(login)));
+        GetElementHint(Authorization.passwordInput).perform(replaceText(password));
+        GetElementHint(Authorization.passwordInput).check(matches(withText(password)));
+        GetElementText(Authorization.signInButton).perform(click());
+    }
+    public void clickInButton() { //Кликаем на конпку Войти
         Allure.step("Авторизация с незаполненными полями логина и пароля");
-        Authorization.signInButton.perform(click());
+        GetElementText(Authorization.signInButton).perform(click());
     }
 }
 
