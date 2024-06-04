@@ -25,12 +25,12 @@ public class AboutClickingLinksTest {
     public void main() {DataHelper dataHelper = new DataHelper();
         dataHelper.authorizedUser();
     }
+    AboutClickLinksPage aboutClickLinksPage = new AboutClickLinksPage();
 
     @Test
     @DisplayName("Переход по ссылке Политики конфиденциальности")
     @Description("По клику на ссылку Политики конфиденциальности открывается страница Политики конфиденциальности в браузере")
     public void shouldViewPrivacyPolicy() {
-        AboutClickLinksPage aboutClickLinksPage = new AboutClickLinksPage();
         aboutClickLinksPage.clickLinkPrivacyPolicy();
     }
 
@@ -39,7 +39,6 @@ public class AboutClickingLinksTest {
     @Description("По клику на ссылку Пользовательское соглашение открывается страница Пользовательское соглашение в браузере")
 
     public void sshouldViewUserAgreement() {
-        AboutClickLinksPage aboutClickLinksPage = new AboutClickLinksPage();
         aboutClickLinksPage.clickLinkUserAgreement();
     }
 

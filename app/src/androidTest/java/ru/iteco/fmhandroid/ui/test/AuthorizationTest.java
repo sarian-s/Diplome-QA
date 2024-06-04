@@ -37,12 +37,12 @@ public class AuthorizationTest {
         dataHelper.logOut();
     }
 
+    AuthorizationPage authorizationPage = new AuthorizationPage();
+    MenuPage menuPage = new MenuPage();
     @Test
     @DisplayName("Авторизация с валидными данными")
     @Description("При успешной авторизации происходит переход на главный экран приложения")
     public void shouldLogInWithValidData() {
-        AuthorizationPage authorizationPage = new AuthorizationPage();
-        MenuPage menuPage = new MenuPage();
         authorizationPage.logIn(Data.validLogin, Data.validPassword);
         menuPage.checkTradeMark();
     }
@@ -52,7 +52,6 @@ public class AuthorizationTest {
     @Description("При вводе незарегистрированных значений логина и пароля отображается сообщение" +
             "Неверный логин или пароль")
     public void shouldLogInWithInValidData() {
-        AuthorizationPage authorizationPage = new AuthorizationPage();
         authorizationPage.logIn(Data.invalidLogin, Data.validPassword);
         authorizationPage.isAuthorizationWindow();
         onView(withText(Authorization.invalidMessage))
@@ -65,7 +64,6 @@ public class AuthorizationTest {
     @Description("При вводе незарегистрированных значений логина и пароля отображается сообщение " +
             "Неверный логин или пароль")
     public void shouldPasswordWithInValidData()  {
-        AuthorizationPage authorizationPage = new AuthorizationPage();
         authorizationPage.logIn(Data.validLogin, Data.invalidPassword);
         authorizationPage.isAuthorizationWindow();
         onView(withText(Authorization.invalidMessage))
@@ -78,7 +76,6 @@ public class AuthorizationTest {
     @Description("При авторизации с пустым логином и (или) паролем пользователю отображается сообщение " +
             "Логин и пароль не могут быть пустыми")
     public void shouldTryLogInWithEmptyField() {
-        AuthorizationPage authorizationPage = new AuthorizationPage();
         authorizationPage.clickInButton();
         authorizationPage.isAuthorizationWindow();
         onView(withText(Authorization.invalidMessage1))

@@ -30,13 +30,15 @@ public class AboutAppTest {
         dataHelper.authorizedUser();
     }
 
+    MenuPage menuPage = new MenuPage();
+    AboutAppPage page = new AboutAppPage();
+    AboutAppPage aboutAppPage = new AboutAppPage();
+
+
     @Test
     @DisplayName("Проверяем информацию о приложении")
     @Description("На странице отображаются все элементы")
     public void shouldBeInfInAboutApp() {
-        MenuPage menuPage = new MenuPage();
-        AboutAppPage page = new AboutAppPage();
-
         menuPage.goToAboutApp();
         page.checkAboutAppInfIsFull();
     }
@@ -45,9 +47,6 @@ public class AboutAppTest {
     @DisplayName("Кликабельность ссылки Политики конфиденциальности")
     @Description("Ссылка Политики конфиденциальности кликабельна")
     public void shouldViewPrivacyPolicy() {
-        MenuPage menuPage = new MenuPage();
-        AboutAppPage page = new AboutAppPage();
-
         menuPage.goToAboutApp();
         page.clickPrivacyPolicy();
 
@@ -58,9 +57,6 @@ public class AboutAppTest {
     @Description("Ссылка Пользовательское соглашение кликабельна")
 
     public void shouldViewUserAgreement() {
-        MenuPage menuPage = new MenuPage();
-        AboutAppPage aboutAppPage = new AboutAppPage();
-
         menuPage.goToAboutApp();
         aboutAppPage.clickUserAgreement();
     }

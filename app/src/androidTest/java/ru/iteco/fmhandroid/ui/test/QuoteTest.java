@@ -33,13 +33,12 @@ public class QuoteTest {
         dataHelper.authorizedUser();
     }
 
+    MenuPage menuPage = new MenuPage();
+    QuotePage quotePage = new QuotePage();
     @Test
     @DisplayName("Проверка просмотра цитат и их описаний")
     @Description("Отображение цитаты и её содержимое")
     public void shouldGoQuotes() {
-        MenuPage menuPage = new MenuPage();
-        QuotePage quotePage = new QuotePage();
-
         elementWaiting(withId(R.id.main_menu_image_button), 2000);
 
         menuPage.goQuotes();

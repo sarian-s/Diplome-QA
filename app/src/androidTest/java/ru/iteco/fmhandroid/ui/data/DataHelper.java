@@ -1,21 +1,30 @@
 package ru.iteco.fmhandroid.ui.data;
 
+import android.os.SystemClock;
 import android.view.View;
 
 import org.hamcrest.Matcher;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.swipeUp;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
+import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
+import static org.hamcrest.Matchers.allOf;
 
 import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.PerformException;
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.espresso.util.HumanReadables;
 import androidx.test.espresso.util.TreeIterables;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -53,15 +62,16 @@ public class DataHelper {
     }
 
 
+    MenuPage menuPage = new MenuPage();
+    String expectedTitle = Data.HeaderPrivacyPolicy;
+
     public void shouldViewPrivacyPolicy() {
-        MenuPage menuPage = new MenuPage();
         menuPage.goToAboutApp();
         GetElement(Quotes.linkPrivacy).perform(click());
 
         uiDevice.wait(Until.hasObject(By.pkg("com.android.chrome")), Data.TimeOut);
 
         // Ожидание появления текста заголовка
-        String expectedTitle = Data.HeaderPrivacyPolicy;
         boolean titleFound = false;
         long startTime = System.currentTimeMillis();
         long endTime = startTime + Data.TimeOut;
@@ -79,9 +89,46 @@ public class DataHelper {
         }
     }
 
+    public static boolean isDisplayedSwipe(ViewInteraction locator, int recycler, boolean finishSwipe) {
+        try {
+            locator.check(matches(isDisplayed()));
+            return true;
+        } catch (NoMatchingViewException ignored) {
+        }
+        boolean invisible = true;
+        int n = 1;
+        while (invisible) {
+            try {
+
+                if (recycler == 3) {
+                    onView(allOf(withId(R.id.news_list_recycler_view), isDisplayed())).perform(actionOnItemAtPosition(n, swipeUp()));
+                }
+            } catch (PerformException e) {
+                return false;
+            }
+            try {
+                locator.check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));//.check(matches(isDisplayed()));
+                invisible = false;
+            } catch (NoMatchingViewException ignored) {
+            }
+            n++;
+            if (!invisible & finishSwipe) {
+                try {
+
+                } catch (PerformException e) {
+                    return false;
+                }
+            }
+            if (n > 2000) {
+                return false;
+            }
+            SystemClock.sleep(500);
+        }
+        return true;
+    }
+
 
 public void shouldViewUserAgreement() {
-    MenuPage menuPage = new MenuPage();
     menuPage.goToAboutApp();
     GetElement(Quotes.linkAgreement).perform(click());
 

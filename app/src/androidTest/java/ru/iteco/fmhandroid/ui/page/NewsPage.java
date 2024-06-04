@@ -1,6 +1,10 @@
 package ru.iteco.fmhandroid.ui.page;
-
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.isSystemAlertWindow;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
@@ -8,7 +12,6 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasSibling;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 import static ru.iteco.fmhandroid.ui.data.DataHelper.GetElement;
@@ -26,6 +29,7 @@ import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.data.Data;
+import ru.iteco.fmhandroid.ui.data.DataHelper;
 import ru.iteco.fmhandroid.ui.elements.News;
 
 public class NewsPage {//создание, редактирование, удаление и фильтр новости
@@ -112,11 +116,11 @@ public class NewsPage {//создание, редактирование, уда�
 
     public void checkCreatedNews() {//проверка созданной новости
         Allure.step("Отображение созданной новости");
-        //---DataHelper.isDisplayedSwipe(onView(withText(Data.titleFilledIn)), 3, true);
+        DataHelper.isDisplayedSwipe(onView(withText(Data.titleFilledIn)), 3, true);
     }
     public void checkEditNews() {//проверка отредактированной  новости
         Allure.step("Отображение отредактированной новости");
-        //DataHelper.isDisplayedSwipe(onView(withText(Data.newTitleEdit)), 3, true);
+        DataHelper.isDisplayedSwipe(onView(withText(Data.newTitleEdit)), 3, true);
     }
     public void checkDeleteNews() { //проверка удаления новости
         Allure.step("Удаленная новость не отображается");
@@ -128,4 +132,9 @@ public class NewsPage {//создание, редактирование, уда�
         GetElement(News.titleTextInputNews).perform(replaceText(Data.newTitleEdit)); //меняем текст заголовка
         GetElement(News.buttonSaveNews).perform(click()); //нажимаем на кнопку сохранить
     }
+    public void displayingMessage() {
+        onView(withText(R.string.empty_fields))
+                .inRoot(isSystemAlertWindow()).check(matches(isDisplayed()));
+    }
+
 }
